@@ -6,12 +6,16 @@
   <title>Document</title>
 </head>
 <body>
-  <% articles.forEach(article => { %>
-    <div>
-      <a href="/articles/<%= article.id %>">
-        <h3><%= article.title %></h3>
-      </a>
-    </div>
-  <% }) %>
+  <% if(articles.length) { %>
+    <% articles.forEach(article => { %>
+      <div>
+        <a href="/articles/<%= article.id %>">
+          <h3><%= article.title %></h3>
+        </a>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <h3>No articles Found</h3>
+  <% } %>
 </body>
 </html>
